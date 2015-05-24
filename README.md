@@ -8,6 +8,5 @@ This peer assessed assignment has two parts. First, you will create a Shiny appl
     Share the application link by pasting it into the text box below
     Share your server.R and ui.R code on github
     
-    https://aalvarez.shinyapps.io/ShinyApplication/
     
-
+https://aalvarez.shinyapps.io/ShinyApplication/
