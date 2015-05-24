@@ -1,0 +1,68 @@
+---
+title       : Colombian value added tax
+subtitle    : 
+author      : A. Alvarez
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets    : [bootstrap, quiz, shiny, interactive]
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Colombian value added tax history
+
+
+In Colombia, the VAT took effect in 1975, after the effective date of Law 20 631, taxing only the producers and importers. 
+
+Since its inception (1975) to the present has undergone significant changes. In its first stage, between 1975 and 1980, virtually no services taxed. 
+
+In the period 1980-1990, taxes on international telecommunications joined to the extent that their remuneration was attributable to the provider company based in the country. During this time, several services were also taxed.
+
+From 1990 until today, they were significantly expanded on services and some exemptions were incorporated in the same direction. And for 1998 they were introduced in the treatment of import and export services.
+
+--- .class #id 
+
+## How to apply VAT?
+
+If you are in Colombia, most goods or services you purchase will be taxed at 16% for this item.
+
+Some basic food products are exempt from this tax, but most of the time, this tax will be charged.
+
+However, this charge will be made on the same invoice, provided the cost of the product presented on the menu should include this value.
+
+--- .class #id 
+
+```{r opts.label = 'shiny',cache=FALSE}
+shinyUI(
+  pageWithSidebar(    
+    headerPanel("Calculate the VAT"),
+    sidebarPanel(
+      h5('You can then calculate the tax of a product to get an idea of what you pay in tax.'),
+      numericInput('product_cost', 'Product Cost US$', 5)
+      ),
+    mainPanel(
+      h3('Tax to Pay'),
+      h5('For a product that cost US$'),
+      tags$div(id = 'nvd3', class='shiny-html-output nvd3'),
+      h5('You must pay a tax of US$'),
+      tags$div(id = 'nvd2', class='shiny-html-output nvd2'),
+      h5('That is, the total pay will be for US$'),
+      tags$div(id = 'nvd1', class='shiny-html-output nvd1')
+    )
+  )
+)
+```
+
+--- .class #id 
+
+
+
+
+Thanks,
+
+A. Alvarez
+
+May, 2015
+
